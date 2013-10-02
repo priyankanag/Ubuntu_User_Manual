@@ -1,0 +1,170 @@
+
+Ubuntu User Manual
+Author: Priyanka Nag
+
+
+Ubuntu Installation
+•	Get an Ubuntu installation disk (liveDVD or liveUSB).
+•	Insert the Ubuntu disk into your DVD drive. (or connect your liveUSB)
+•	Make sure that your BIOS (boot order) is set to boot from a CD/USB before a hard drive.
+•	Start or restart your computer. If you do not see the Ubuntu logo, please refer to BootFromCD.
+•	Choose the Try Ubuntu option in order to check that your hardware (screen, keyboard, internet...) is correctly recognized by Ubuntu.
+•	Backup your documents on an external disk or DVDs
+•	When you are ready to install Ubuntu on your hard disk, click the Install Ubuntu button. The installation wizard will appear: 
+•	Select your desired language and click Continue. The Preparing to install Ubuntu window appears. 
+ Preparing to install Ubuntu
+Select your desired options from the list on the screen and click Continue. The Installation type window appears. 
+Installation type
+Several choices are available:
+•	If you want to install Ubuntu alongside you other systems (eg alongside Windows), select the Install Ubuntu alongside them.
+•	If you want to install Ubuntu over your entire hard drive, select Erase disk and install Ubuntu, then select the hard drive that you want to install Ubuntu. Warning: this will erase all data and systems that are currently on the disk.
+•	If you want to manually setup your partitioning scheme, , select the Something else option. You will find further advice on the DiskSpace page.
+Click Install now. From this point, the installation cannot be cancelled. Few additional parameters need to be setup. The Where are you? window appears. 
+•	Select the location closest to your location. Click Continue. The Keyboard layout window appears. 
+•	Select the correct keyboard layout. Click Continue. The Who are you? window appears. 
+•	When the installation wizard finishes, the Installation complete window appears. 
+If all of the above steps are correctly executed, the Installation Complete window will pop-up. Click Restart now to restart your computer. Ubuntu is now installed. 
+The linux manual
+The documentation for almost all our regular linux commands can be found in the 'man pages' of the respective command.
+1. man <command>  ­ shows all information about the command 
+2. <command> ­­help  ­ shows the available options for that command  
+
+File handling commands
+1) mkdir
+ – this command is used for making directories in linux                                                                
+        eg. mkdir priyanka
+This command will create a new directory named 'priyanka'. We need to make sure we are in the correct location when creating the folders.
+2) ls
+ – list directory contents of the directory we currently are situated in.                                                
+       eg. we go to our required path and type 'ls'
+The options that can be used with ls are:
+Option	Command Execution
+-a	View all files, including the hidden files
+-l	print the author of each file i.e. along with file name, the author details, permission settings, creation date etc will also be visible
+-C	 list entries by columns i.e. instead of a straight line, all the contents of the directory will be visible in multiple columns.
+-r	Will display the contents in reverse order while sorting
+-s	print the allocated size of each file, in blocks along with the file names
+
+There are a few more options which an user can find in the man pages of ls but the above stated options are the ones we most commonly use.
+
+
+3) cd
+ – changes directories                                                                    
+        eg. cd /home/priyanka/Desktop
+The above command will take us to the Desktop which resides inside home's priyanka folder.
+        eg. cd .. 	
+Used to go back one directory on the majority of all Unix shells. It is important that the space be between the cd and the ..
+4) cp
+ - copy file or directory from one location to another.
+     eg. cp file1.txt newdir
+Copies the file1.txt in the current directory to the newdir directory.
+   eg. cp /home/public_html/mylog.txt /home/public_html/backup/mylog.bak
+Copies the mylog.txt file in the public_html directory into the public_html/backup directory as mylog.bak. The files are identical however have different names.
+   eg. cp *.txt newdir
+Copy all files ending in .txt into the newdir directory.
+   eg. cp -r /home/hope/files/* /home/hope/backup
+Copies all the files, directories, and subdirectories in the files directory into the backup directory.
+5) mv 
+ - Renames a file or moves it from one directory to another directory.
+   The options which can be used with mv command are:
+Option	Command Execution
+-f	mv will move the file(s) without prompting even if it is writing over an existing target. Note that this is the default if the standard input is not a terminal.
+-i	Prompts before overwriting another file.
+
+•	eg. mv myfile.txt newdirectory/
+Moves the file myfile.txt to the directory newdirectory.
+•	eg. mv myfile.txt ../
+Moves the file myfile.txt back one directory (if available).
+•	eg. mv computer\ hope.txt computer_hope.txt
+Moves (renames) the file "computer hope.txt" to computer_hope.txt. When working with a file or directory with a space you must escape that space with a backslash or surround the filename or directory with quotes.
+
+6) rm
+ - Deletes a file without confirmation (by default).
+  The options which can be used with rm command are:
+Option	Command Execution
+-f	Remove all files (whether write-protected or not) in a directory without prompting the user. In a write-protected directory, however, files are never removed (whatever their permissions are), but no messages are displayed. If the removal of a write-protected directory is attempted, this option will not suppress an error message.
+-i	Interactive. With this option, rm prompts for confirmation before removing any files. It over- rides the -f option and remains in effect even if the standard input is not a terminal.
+-R	Same as -r option.
+-r	Recursively remove directories and subdirectories in the argument list. The directory will be emptied of files and removed. The user is normally prompted for removal of any write-protected files which the directory contains. The write-protected files are removed without prompting, however, if the -f option is used, or if the standard input is not a terminal and the -i option is not used. Symbolic links that are encountered with this option will not be traversed. If the removal of a non-empty, write-protected directory is attempted, the utility will always fail (even if the -f option is used), resulting in an error message.
+
+•	eg. rm myfile.txt
+Remove the file myfile.txt without prompting the user.
+•	eg. rm -rf directory
+Remove a directory, even if files exist in that directory.
+7) pwd
+ -  print name of current/working directory
+eg. Typing pwd at the prompt would give you something similar to:
+  	/home/priyanka/public_html
+8) cat 
+ - Allows you to look, modify or combine a file.
+ The options which can be used with cat command are:
+Option	Command Execution
+-n	Precede each line output with its line number.
+-b	Number the lines, as -n, but omit the line numbers from blank lines.
+-u	The output is not buffered. (The default is buffered output.)
+-s	cat is silent about non-existent files.
+-v	 Non-printing characters (with the exception of tabs, new-lines and form-feeds) are printed visibly. ASCII control characters (octal 000 - 037) are printed as ^n, where n is the corresponding ASCII character in the range octal 100 - 137 (@, A, B, C, . . ., X, Y, Z, [, \, ], ^, and _); the DEL character (octal 0177) is printed ^?. Other non-printable characters are printed as M-x, where x is the ASCII character specified by the low order seven bits.
+-e	A $ character will be printed at the end of each line (prior to the new-line).
+-t	Tabs will be printed as ^I's and formfeeds to be printed as ^L's.
+
+ eg. cat file1.txt file2.txt > file3.txt
+Reads file1.txt and file2.txt and combines those files to make file3.txt.
+9) sudo 
+ - sudo ("superuser do") allows a user with proper permissions to execute a command as another user, such as the superuser.
+ sudo allows a permitted user to execute a command as another user, according to specifications in the /etc/sudoers file. The real and effective uid and gid of the issuing user are then set to match those of the target user account as specified in the passwd file.
+By default, sudo requires that users authenticate themselves with a password. By default this is the user's password, not the root password itself.
+Once a user has been authenticated, a timestamp is recorded and the user may use sudo without a password for a short period of time (5 minutes, unless configured differently in sudoers). This timestamp can be renewed if the user issues sudo with the -v flag.
+
+If a user not listed in sudoers tries to run a command using sudo, it is considered an unsuccessful attempt to breach system security and mail is sent to the proper authorities, as defined at configure time or in the sudoers file. The default authority to be notified of unsuccessful sudo attempts is root. Note that the mail will not be sent if an unauthorized user tries to run sudo with the -l or -v flags; this allows users to determine for themselves whether or not they are allowed to use sudo.
+sudo can log both successful and unsuccessful attempts (as well as errors) to syslog(3), a unique log file, or both. By default sudo will log to syslog(3) but this can be changed at configure time or in the sudoers file. 
+eg. sudo [command]
+This will prompt the user to enter his super user password. The following command will be executed only when the correct password is entered.
+10) passwd
+ - Allows you to change your password.
+ The options which can be used with cat command are:	
+Option	Command Execution
+-r	Specifies the repository to which an operation is applied. The supported repositories are files, nis or nisplus.
+-a	Show password attributes for all entries. Use only with the -s option; name must not be provided. For the nisplus repository, this will show only the entries in the NIS+ password table in the local domain that the invoker is authorized to "read". For the files repository, this is restricted to the superuser.
+-d	Deletes password for name. The login name will not be prompted for password. It is only applicable to the files repository.
+-l	Locks password entry for name.
+-e	Change the login shell. For the files repository, this only works for the super-user. Normal users may change the nis or nisplus repositories. The choice of shell is limited by the requirements of getusershell(3C). If the user currently has a shell that is not allowed by getusershell , only root may change it.
+-f	Force the user to change password at the next login by expiring the password for name.
+-g	Change the gecos (finger) information. For the files repository, this only works for the superuser. Normal users may change the nis or nisplus repositories.
+-h	Change the home directory.
+   
+
+    eg. Passwd
+ Entering just passwd would allow you to change the password. After entering passwd you will receive the following three prompts:
+	Current Password: 
+	New Password:
+	Confirm New Password:
+  Each of these prompts must be entered and entered correctly for the password to be successfully changed.
+11) useradd
+ Enables a super user or root to create a new user or updates default new user information.
+ eg. useradd newperson
+ In the above example the useradd command would add "newperson" as a new user to the system. Once the new user has been added to the computer you would need to use the passwd command.
+ For these commands to work you must have super user rights or be logged in as root.
+12) mount
+Commonly, mount is a term used with a Unix and Linux machine where the mount command makes a directory accessible by attaching a root directory of one file system to another directory. This makes the other directory or device appear as a directory or subdirectory of that system.
+ eg. mount /dev/usr /usr
+Mount a local disk
+13) df
+Report how much free disk space is available for each mount you have.
+ eg. df
+In the above example when performing just the df command with no additional switches or specification of the file or directory you would get a listing of all file systems and their used and available space.
+
+Intalling packages in Ubuntu
+'apt-get' - The technical method for installing packages in Ubuntu
+The apt-get program is a command-line package manager, which should be used if the Add/Remove tool and Synaptic ever run into problems. It provides an advanced interface to APT, the underlying package management system which Ubuntu uses, but is reasonably easy to operate. Power users may find that apt-get is quicker to use and more powerful than the graphical options above. 
+
+Installing downloaded packages
+You may wish to install a package you have downloaded from a website, rather than from a software repository. These packages are called .deb files. Because they may have been created for a different Linux distribution, you might find that there's dependency issues with Ubuntu, meaning that they may be uninstallable.
+To find a package which you have previously downloaded using Synaptic, aptitude or apt-get, look in /var/cache/apt/archives
+dpkg is a command-line tool used to install packages. To install a package with dpkg, open a Terminal and type the following:
+cd directory
+sudo dpkg -i package_name.deb
+Note: replace directory with the directory in which the package is stored and package_name with the filename of the package.
+It is recommended that you read the dpkg manual page before using dpkg, as improper use may break the package management database. To view the manual page for dpkg, open a Terminal and type man dpkg. 
+
+
+
